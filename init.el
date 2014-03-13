@@ -1,7 +1,8 @@
-
+(setq inhibit-startup-message t)
 (require 'package)
-(add-to-list 'package-archives
-  '("melpa" . "http://melpa.milkbox.net/packages/") t)
+(setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
+                         ("marmalade" . "http://marmalade-repo.org/packages/")
+                         ("melpa" . "http://melpa.milkbox.net/packages/")))
 
 (package-initialize)
 
@@ -24,7 +25,16 @@ Return a list of installed packages or nil for every skipped package."
 (or (file-exists-p package-user-dir)
     (package-refresh-contents))
 
-(ensure-package-installed 'iedit 'magit 'evil 'color-theme)
+(ensure-package-installed 
+  'iedit 
+  'magit 
+  'evil 
+  'color-theme 
+  'ghc 
+  'clojure-mode  
+  'lein 
+  'clojure-test-mode 
+  'cider)
 
 
 (add-hook 'haskell-mode-hook 'turn-on-haskell-doc-mode)
@@ -40,3 +50,55 @@ Return a list of installed packages or nil for every skipped package."
 
 (autoload 'ghc-init "ghc" nil t)
 (add-hook 'haskell-mode-hook (lambda () (ghc-init) (flymake-mode)))
+
+
+;;;;;;;;;;;;;;;;;;;;; Layouts;;;;;;;
+
+
+
+(menu-bar-mode -1)
+(tool-bar-mode -1)
+(scroll-bar-mode -1)
+
+
+
+;; Don't ring the bell
+(setq ring-bell-function 'ignore)
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; Clojure Config
+(add-hook 'clojure-mode-hook 'paredit-mode)
+(add-hook 'clojure-mode-hook 'rainbow-delimiters-mode) 
+
+
+;; ido
+
+(ido-mode 1)
+(ido-everywhere 1)
+(flx-ido-mode 1)
+(setq ido-enable-flex-matching t) ; fuzzy matching is a must have
+(setq ido-enable-prefix nil)
+
+;; find things 
+(global-set-key [(super shift f)] 'ftf-find-file)
+
+
+;; disable ido faces to see flx highlights.
+(setq ido-use-faces nil)
+;;
+
+
+;; projectile
+;;
+;;
+(projectile-global-mode)
+
+
+
+;;; font
+
+
+ (set-default-font "-apple-PragmataPro-medium-normal-normal-*-12-*-*-*-m-0-iso10646-1")
+ (global-linum-mode 1)
+ (setq linum-format "%d ")
