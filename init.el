@@ -80,14 +80,13 @@ Return a list of installed packages or nil for every skipped package."
 (setq ido-enable-flex-matching t) ; fuzzy matching is a must have
 (setq ido-enable-prefix nil)
 
-;; find things 
-(global-set-key [(super shift f)] 'ftf-find-file)
 
 
 ;; disable ido faces to see flx highlights.
 (setq ido-use-faces nil)
 ;;
 
+(setq make-backup-files nil)
 
 ;; projectile
 ;;
@@ -95,7 +94,11 @@ Return a list of installed packages or nil for every skipped package."
 (projectile-global-mode)
 
 
+;; find things 
+(global-set-key [(super shift f)] 'projectile-find-file)
 
+(global-set-key [(super shift p)] nil)
+(global-set-key [(super  p)] nil)
 ;;; font
 
 

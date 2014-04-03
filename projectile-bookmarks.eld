@@ -1,1 +1,1 @@
-("~/dev/" "~/dev/command-line-args/" "~/.emacs.d/")
+("~/dev/hslisp/" "~/dev/hs-streekly/" "~/dev/" "~/dev/xagut/" "~/dev/clj-v8/" "~/dev/stefon/" "~/less.js/" "~/.emacs.d/" "~/dev/webbsy/" "~/dev/euler/euler_clojure/" "~/dev/giantss/" "~/dev/command-line-args/")
