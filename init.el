@@ -48,8 +48,7 @@ Return a list of installed packages or nil for every skipped package."
 (color-theme-charcoal-black)
 
 
-(autoload 'ghc-init "ghc" nil t)
-(add-hook 'haskell-mode-hook (lambda () (ghc-init) (flymake-mode)))
+;;(add-hook 'haskell-mode-hook 'flymake-haskell-multi-load)
 
 
 ;;;;;;;;;;;;;;;;;;;;; Layouts;;;;;;;
@@ -80,6 +79,12 @@ Return a list of installed packages or nil for every skipped package."
 (setq ido-enable-flex-matching t) ; fuzzy matching is a must have
 (setq ido-enable-prefix nil)
 
+
+
+(add-hook 'after-init-hook #'global-flycheck-mode)
+
+(eval-after-load 'flycheck
+				   '(add-hook 'flycheck-mode-hook #'flycheck-haskell-setup))
 
 
 ;; disable ido faces to see flx highlights.
