@@ -1,4 +1,8 @@
 (setq inhibit-startup-message t)
+
+(add-to-list 'load-path "~/.emacs.d/hasktags-emacs")
+(load "hasktags")
+
 (require 'package)
 (setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
                          ("marmalade" . "http://marmalade-repo.org/packages/")
@@ -38,7 +42,7 @@ Return a list of installed packages or nil for every skipped package."
 
 
 (add-hook 'haskell-mode-hook 'turn-on-haskell-doc-mode)
- (add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
+(add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
  ;;(add-hook 'haskell-mode-hook 'turn-on-haskell-indent)
  ;;(add-hook 'haskell-mode-hook 'turn-on-haskell-simple-indent)
 

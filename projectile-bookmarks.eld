@@ -1,1 +1,1 @@
-("~/dev/hs-streekly/" "~/.emacs.d/" "~/dev/hslisp/" "~/dev/" "~/dev/xagut/" "~/dev/clj-v8/" "~/dev/stefon/" "~/less.js/" "~/dev/webbsy/" "~/dev/euler/euler_clojure/" "~/dev/giantss/" "~/dev/command-line-args/")
+("~/dev/realgoldflakes/" "~/.emacs.d/" "~/dev/hs-streekly/" "~/dev/hslisp/" "~/dev/" "~/dev/xagut/" "~/dev/clj-v8/" "~/dev/stefon/" "~/less.js/" "~/dev/webbsy/" "~/dev/euler/euler_clojure/" "~/dev/giantss/" "~/dev/command-line-args/")
